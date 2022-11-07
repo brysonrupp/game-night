@@ -8,6 +8,24 @@ class AppState extends EventEmitter {
   values = loadState('values', [Value])
 }
 
+
+
+
+export class Player {
+  constructor(name) {
+    this.name = name
+    // The score is defaulted to start at 0
+    this.score = 0
+  }
+}
+
+
+
+
+
+
+
+
 export const appState = new Proxy(new AppState(), {
   get(target, prop) {
     isValidProp(target, prop)
